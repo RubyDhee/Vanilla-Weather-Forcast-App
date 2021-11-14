@@ -1,0 +1,66 @@
+body {
+  background: linear-gradient(
+    110.6deg,
+    rgb(184, 142, 252) 2.2%,
+    rgb(104, 119, 244) 100.2%
+  );
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  color: #6e386e;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+a {
+  color: #6e386e;
+  text-decoration: none;
+}
+a:hover {
+  color: #ca4b7c;
+}
+li {
+  list-style: none;
+  font-size: smaller;
+}
+small {
+  font-size: x-small;
+}
+
+.weather-app {
+  background-color: #fcfefe;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 50px 50px 10px;
+  border: 1px solid #fcfefe;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 0px #363636;
+}
+.searchCity {
+  margin-bottom: 30px;
+}
+
+#weather-details {
+  margin: 30px 0px;
+}
+.current-temperature img {
+  float: left;
+  height: 64px;
+  width: 64px;
+}
+.current-temperature strong {
+  color: #ca4b7c;
+  font-size: 64px;
+  line-height: 1;
+  padding-left: 10px;
+}
+.current-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+.current-temperature .active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
