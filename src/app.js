@@ -9,16 +9,43 @@ function formatDate(timestamp) {
     minutes = `0 ${minutes}`;
   }
   let days = [
-    "sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}: ${minutes}`;
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-3">
+        <div class="forecast-date">${day}</div>
+          <img
+            src="http://openweathermap.org/img/wn/09d@2x.png"
+            alt=""
+            width="40"
+            />
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max"> 26°</span
+              ><span class="forecast-temperature-min"> 19°</span>
+          </div>
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 
 function showTemperature(response) {
@@ -88,3 +115,4 @@ let celsiusLink = document.querySelector("#convert-celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Skopje");
+displayForecast();
