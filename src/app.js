@@ -2,11 +2,11 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
-    hours = `0 ${hours}`;
+    hours = `0${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    minutes = `0 ${minutes}`;
+    minutes = `0${minutes}`;
   }
   let days = [
     "Sunday",
@@ -108,32 +108,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 let form = document.querySelector(".searchCity");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#convert-fahrenheit");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#convert-celsius");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Skopje");
